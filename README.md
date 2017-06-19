@@ -13,7 +13,7 @@ You should always run with -v in order to bind the outer docker socket to the in
 
 Jenkins slave machines with environment differences.
 
-- #####Node 7 Environment
+- Node 7 Environment
     ```
     docker build --tag jenkins-slave-node slaves/node
     ```
