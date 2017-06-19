@@ -4,10 +4,14 @@ Jenkins image with docker installed.
 #### Usage ####
 ```
 docker build --tag docker-jenkins .
-docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 80:8080 docker-jenkins
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8888:8080 docker-jenkins
 ```
 You should always run with -v in order to bind the outer docker socket to the internal docker of your container. This should avoid the Docker-in-Docker effect.
 
+#### Docker Compose
+```
+docker-compose up -d
+```
 
 #### Slaves
 

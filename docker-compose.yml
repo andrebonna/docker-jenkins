@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  docker-jenkins:
+    image: andrebonna/docker-jenkins
+    ports:
+      - 8888:8080
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
