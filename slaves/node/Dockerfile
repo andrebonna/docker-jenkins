@@ -13,5 +13,7 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubunt
 RUN apt-get update
 RUN apt-get install -y docker-ce
 
+RUN npm install -g yarn
+
 EXPOSE 2222
 CMD ["/usr/sbin/sshd", "-D", "-p", "2222"]
