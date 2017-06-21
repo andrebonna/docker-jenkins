@@ -7,5 +7,11 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN apt-get install -y build-essential
 
-EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+RUN apt-get install -y apt-transport-https ca-certificates software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+RUN apt-get update
+RUN apt-get install -y docker-ce
+
+EXPOSE 2222
+CMD ["/usr/sbin/sshd", "-D", "-p", "2222"]
