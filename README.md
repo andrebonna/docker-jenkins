@@ -13,6 +13,22 @@ You should always run with -v in order to bind the outer docker socket to the in
 docker-compose up -d
 ```
 
+#### Jenkins Plugins
+
+- Docker plugin
+- HTML Publisher plugin
+- JUnit Plugin
+- Pipeline: AWS Steps
+
+#### Configure Jenkins
+
+Follow this tutorial: https://devopscube.com/docker-containers-as-build-slaves-jenkins/
+
+Additional Container Configuration:
+- Make sure that the container exposed SSH port matches with SSH connect.
+- Link volumes
+    - /var/run/docker.sock:/var/run/docker.sock
+
 #### Slaves
 
 Jenkins slave machines with environment differences.
