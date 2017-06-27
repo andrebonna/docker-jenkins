@@ -19,6 +19,7 @@ RUN pip install awscli
 RUN update-ca-certificates -f
 
 RUN npm install -g yarn
+RUN npm install -g serverless
 
 EXPOSE 2222
 CMD ["/usr/sbin/sshd", "-D", "-p", "2222"]
